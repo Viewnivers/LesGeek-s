@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuration de l'événement</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, button {
+      margin-top: 5px;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Configurer l'événement</h1>
+  <form id="event-form">
+    <label for="event-name">Nom de l'événement:</label>
+    <input type="text" id="event-name" name="event-name" required>
+
+    <label for="event-date">Date de l'événement:</label>
+    <input type="datetime-local" id="event-date" name="event-date" required>
+
+    <label for="event-location">Lieu de l'événement:</label>
+    <input type="text" id="event-location" name="event-location" required>
+
+    <button type="submit">Enregistrer</button>
+  </form>
+
+  <script>
+    document.getElementById('event-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const eventName = document.getElementById('event-name').value;
+      const eventDate = document.getElementById('event-date').value;
+      const eventLocation = document.getElementById('event-location').value;
+
+      localStorage.setItem('eventName', eventName);
+      localStorage.setItem('eventDate', eventDate);
+      localStorage.setItem('eventLocation', eventLocation);
+
+      alert('Événement enregistré avec succès!');
+    });
+
+    // Pré-remplir le formulaire avec les valeurs existantes
+    window.onload = function () {
+      if (localStorage.getItem('eventName')) {
+        document.getElementById('event-name').value = localStorage.getItem('eventName');
+      }
+      if (localStorage.getItem('eventDate')) {
+        document.getElementById('event-date').value = localStorage.getItem('eventDate');
+      }
+      if (localStorage.getItem('eventLocation')) {
+        document.getElementById('event-location').value = localStorage.getItem('eventLocation');
+      }
+    };
+  </script>
+</body>
+
+</html>

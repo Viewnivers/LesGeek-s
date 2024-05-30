@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LesGeek's</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+  /* Styles pour le modal */
+  .modal {
+      display: none; /* Masqué par défaut */
+      position: fixed;
+      z-index: 1;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    h3 {
+     
+      color: #FF8C00;
+      font-size: 25px;
+    }
+
+    h4 {
+      color: #dfc09b;
+      font-size: 20px;
+    }
+
+    h5{
+      color: #dfc09b;
+      font-size: 15px;
+
+    }
+    .modal-content {
+      background-color: #141313;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    #event-widget {
+      text-align: center;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 800px; /* Largeur du rectangle */
+      background-color: #f9f9f9; /* Couleur de fond */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #event-widget h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #event-widget p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    #countdown {
+      margin-top: 20px;
+    }
+
+    #countdown h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    #countdown-timer {
+      font-size: 1.5em;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Image" style="width:65px;height:60px;">
+      </a>
+
+      <div class="header-actions">
+
+        <button class="search-btn">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        <div class="lang-wrapper">
+          <label for="language">
+            <ion-icon name="globe-outline"></ion-icon>
+          </label>
+
+          <select name="language" id="language">
+            <option value="fr">FR</option>
+            
+          </select>
+        </div>
+
+        <button class="btn btn-primary" onclick="window.location.href='login.html'">
+          <span id="loginButtonLabel">Se connecter</span>
+      </button>
+      
+      <script src="script.js"></script>
+      
+      </div>
+
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="reorder-two"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.png" alt="Filmlane logo" style="width:65px;height:60px;">
+          </a>
+
+          <button class="menu-close-btn" data-menu-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+        </div>
+
+ 
+        <ul class="navbar-list">
+
+          <li>
+            <a href="./index.html" class="navbar-link">Accueil</a>
+          </li>
+
+          <li>
+            <a href="Movie.html" class="navbar-link">Projets</a>
+          </li>
+
+          <li>
+            <a href="Serie.html" class="navbar-link">Animations</a>
+          </li>
+
+          <li>
+            <a href="Anime.html" class="navbar-link">Les JDR</a>
+          </li>
+
+          <li>
+            <a href="tv.html" class="navbar-link">Infos</a>
+          </li>
+
+        </ul>
+
+        <ul class="navbar-social-list">
+
+          <li>
+            <button class="btn btn-primary" onclick="window.location.href='login.html'">
+              <span id="loginButtonLabel">Se connecter</span>
+          </button>
+          <script src="script.js"></script>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">The Medicine For Quest</p>
+
+            <h1 class="h1 hero-title">
+              Le JDR <strong>du moment</strong>
+            </h1>
+
+            <div class="meta-wrapper">
+
+              <div class="badge-wrapper">
+                <div class="badge badge-fill">LesGeek's</div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        - #UPCOMING
+      -->
+
+      <section class="upcoming">
+        <div class="container">
+
+          <div class="flex-wrapper">
+
+            <div class="title-wrapper">
+              <p class="section-subtitle">Bienvenue sur le site officiel LesGeek's</p>
+
+              <h2 class="h2 section-title">Les Projets </h2>
+            </div>
+
+          </div>
+
+          <ul class="movies-list  has-scrollbar">
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./viewnivers.html">
+                  <figure class="card-banner">
+                    <img src="./assets/images/viewnivers.png" alt="The Northman movie poster" style="width:300px;height:500px";>
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./viewnivers.html">
+                    <h3 class="card-title">Viewnivers</h3>
+                  </a>
+
+                  <time datetime="2022">2024</time>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+      <!-- 
+        - #TOP RATED
+      -->
+
+      <section class="top-rated">
+        <div class="container">
+
+          <h2 class="h2 section-title">Calendrier d'Animations</h2>
+
+          <div id="event-widget">
+            
+            <p id="event-name">JDR The Medicine For Quest</p>
+            <p id="event-date">Date de l'événement: 09 juin 2024</p>
+            <p id="event-location">Lieu de l'événement: Serveur JDR</p>
+            <div id="countdown">
+              <h3>Compte à rebours vers l'événement</h3>
+              <p id="countdown-timer"></p>
+            </div>
+          </div>
+
+          <ul class="movies-list">
+
+          </ul>
+
+        </div>
+      </section>
+
+
+         <!-- 
+        - #UPCOMING
+      -->
+
+      <section class="upcoming">
+        <div class="container">
+
+          <div class="flex-wrapper">
+
+            <div class="title-wrapper">
+              
+
+      
+
+          <ul class="movies-list  has-scrollbar">
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./the medicine for quest.html">
+                  <figure class="card-banner">
+                    <img src="./assets/images/The medicine for quest v2.png" alt="The Northman movie poster" style="width:300px;height:500px";>
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./the medicine for quest.html">
+                    <h3 class="card-title">The Medicine For Quest</h3>
+                  </a>
+
+                  
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+
+      <!-- 
+        - #UPCOMING
+      -->
+
+      <section class="upcoming">
+        <div class="container">
+
+          <div class="flex-wrapper">
+
+            <div class="title-wrapper">
+          
+
+              <h2 class="h2 section-title">Les JDR </h2>
+            </div>
+
+          </div>
+
+          <ul class="movies-list  has-scrollbar">
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./the medicine for quest.html">
+                  <figure class="card-banner">
+                    <img src="./assets/images/The medicine for quest v2.png" alt="The Northman movie poster" style="width:300px;height:500px";>
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./viewnivers.html">
+                    <h3 class="card-title">The Medicine For Quest</h3>
+                  </a>
+
+                  <time datetime="2022">2023-2024</time>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./la resilience.html">
+                  <figure class="card-banner">
+                    <img src="./assets/images/la resilience.png" alt="The Northman movie poster" style="width:300px;height:500px";>
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./la resilience.html">
+                    <h3 class="card-title">La Résilience</h3>
+                  </a>
+
+                  <time datetime="2022">2022-2023</time>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand-wrapper">
+
+        </div>
+
+        
+
+          <ul class="quicklink-list">
+
+            <li>
+              <a href="#" class="quicklink-link">Faq</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Help center</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Terms of use</a>
+            </li>
+
+            <li>
+              <a href="#" class="quicklink-link">Privacy</a>
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-pinterest"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 <a href="#">LesGeek's</a>. All Rights Reserved
+        </p>
+
+       
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+ <!-- Modal pour les mises à jour -->
+ <div id="updateModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Mises à jour récentes</h3>
+    <!-- LesGeek's.com -->
+    <h4>Voici les dernières mises à jour sur LesGeek's.com :</h4>
+    <h0>'</h0>
+    <h5>
+      Version 0.1 : Création du site.
+    </h5>
+    <h0>'</h0>
+    <!-- Discord LesGeek's -->
+    <h4>Voici les dernières mises à jour sur le serveur LesGeek's :</h4>
+    <h0>'</h0>
+    <h5>
+      Version 1.0 : Supression de la catégorie Planning.
+    </h5>
+    
+      <!-- Les mises à jour seront insérées ici via JavaScript -->
+    </ul>
+  </div>
+</div>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Obtenez le modal
+  var modal = document.getElementById("updateModal");
+
+  // Obtenez le bouton qui ferme le modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // Ouvrir le modal au chargement de la page
+  modal.style.display = "block";
+
+  // Fermer le modal quand l'utilisateur clique sur <span> (x)
+  span.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  // Fermer le modal quand l'utilisateur clique en dehors du modal
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // Mises à jour (ceci pourrait être chargé dynamiquement d'un backend)
+  var updates = [
+    "Mise à jour 1: Description de la mise à jour 1.",
+    "Mise à jour 2: Description de la mise à jour 2.",
+    "Mise à jour 3: Description de la mise à jour 3."
+  ];
+
+  // Ajouter les mises à jour au modal
+  var updateList = document.getElementById("updateList");
+  updates.forEach(function (update) {
+    var li = document.createElement("li");
+    li.textContent = update;
+    updateList.appendChild(li);
+  });
+});
+
+
+    // Date cible de l'événement
+    const eventDate = new Date("June 09, 2024 14:15:00").getTime();
+
+    // Mise à jour du compte à rebours toutes les secondes
+    const countdownFunction = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      // Calcul des jours, heures, minutes et secondes
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Affichage du résultat
+      document.getElementById("countdown-timer").innerHTML = days + "j " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // Si le compte à rebours est terminé
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown-timer").innerHTML = "L'événement est commencé!";
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>

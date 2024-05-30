@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widget Événement avec Compte à Rebours</title>
+  <style>
+    #event-widget {
+      text-align: center;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 600px; /* Largeur du rectangle */
+      background-color: #f9f9f9; /* Couleur de fond */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #event-widget h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #event-widget p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    #countdown {
+      margin-top: 20px;
+    }
+
+    #countdown h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    #countdown-timer {
+      font-size: 1.5em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="event-widget">
+    <h2>Prochain Événement</h2>
+    <p id="event-name">Nom de l'événement</p>
+    <p id="event-date">Date de l'événement: 30 juin 2024</p>
+    <p id="event-location">Lieu de l'événement: Paris</p>
+    <div id="countdown">
+      <h3>Compte à rebours vers l'événement</h3>
+      <p id="countdown-timer"></p>
+    </div>
+  </div>
+
+  <script>
+    // Date cible de l'événement
+    const eventDate = new Date("June 30, 2024 18:00:00").getTime();
+
+    // Mise à jour du compte à rebours toutes les secondes
+    const countdownFunction = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      // Calcul des jours, heures, minutes et secondes
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Affichage du résultat
+      document.getElementById("countdown-timer").innerHTML = days + "j " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+
+      // Si le compte à rebours est terminé
+      if (distance < 0) {
+        clearInterval(countdownFunction);
+        document.getElementById("countdown-timer").innerHTML = "L'événement est commencé!";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
