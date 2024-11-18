@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DiceMaster</title>
+
+   <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        
+       
+        
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        /* Styles pour le modal */
+  .modal {
+      display: none; /* Masqué par défaut */
+      position: fixed;
+      z-index: 1;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    h3 {
+     
+      color: #FF8C00;
+      font-size: 25px;
+    }
+
+    h4 {
+      color: #dfc09b;
+      font-size: 20px;
+    }
+
+    h5{
+      color: #dfc09b;
+      font-size: 15px;
+
+    }
+
+    h6 {
+     
+     color: #f9f9f9;
+     font-size: 25px;
+   }
+   h7 {
+     
+     color: #f9f9f9;
+     font-size: 16px;
+   }
+    .modal-content {
+      background-color: #141313;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    #event-widget {
+      text-align: center;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 800px; /* Largeur du rectangle */
+      background-color: #f9f9f9; /* Couleur de fond */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #event-widget h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    #event-widget p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    #countdown {
+      margin-top: 20px;
+    }
+
+    #countdown h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    #countdown-timer {
+      font-size: 1.5em;
+      color: #333;
+    }
+    </style>
+<body id="top">
+
+    <!-- 
+      - #HEADER
+    -->
+  
+    <header class="header" data-header>
+      <div class="container">
+  
+        <div class="overlay" data-overlay></div>
+  
+        <a href="./index.html" class="logo">
+          <img src="./assets/images/DiceMaster.png" alt="Image" style="width:65px;height:60px;">
+        </a>
+  
+        <div class="header-actions">
+  
+          <button class="search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+  
+          <div class="lang-wrapper">
+            <label for="language">
+              <ion-icon name="globe-outline"></ion-icon>
+            </label>
+  
+            <select name="language" id="language">
+              <option value="fr">FR</option>
+              
+            </select>
+          </div>
+  
+          <button class="btn btn-primary" onclick="window.location.href=''">
+            <span id="loginButtonLabel">Se connecter</span>
+        </button>
+        
+        <script src="script.js"></script>
+        
+        </div>
+  
+        <button class="menu-open-btn" data-menu-open-btn>
+          <ion-icon name="reorder-two"></ion-icon>
+        </button>
+  
+        <nav class="navbar" data-navbar>
+  
+          <div class="navbar-top">
+  
+            <a href="./DiceMaster.html" class="logo">
+              <img src="./assets/images/DiceMaster.png" alt="Filmlane logo" style="width:65px;height:60px;">
+            </a>
+  
+            <button class="menu-close-btn" data-menu-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+  
+          </div>
+  
+   
+          <ul class="navbar-list">
+  
+            <li>
+              <a href="index.html" class="navbar-link">LesGeek's</a>
+            </li>
+  
+            <li>
+              <a href="#introduction" class="navbar-link">Introduction</a>
+            </li>
+  
+            <li>
+              <a href="#commandes" class="navbar-link">Commandes</a>
+            </li>
+  
+            <li>
+              <a href="#faq" class="navbar-link">FAQ</a>
+            </li>
+  
+            <li>
+              <a href="#support" class="navbar-link">Support</a>
+            </li>
+  
+          </ul>
+  
+          <ul class="navbar-social-list">
+  
+            <li>
+              <button class="btn btn-primary" onclick="window.location.href='login.html'">
+                <span id="loginButtonLabel">Se connecter</span>
+            </button>
+            <script src="script.js"></script>
+  
+            </li>
+  
+          </ul>
+  
+        </nav>
+  
+      </div>
+    </header>
+  
+    <main>
+      <article>
+  
+        <!-- 
+          - #HERO
+        -->
+  
+        <section id="accueil" class="hero">
+          <div class="container">
+  
+            <div class="hero-content">
+  
+              <p class="hero-subtitle">DiceMaster</p>
+  
+              <h1 class="h1 hero-title">
+                Le Bot Discord <strong>By LesGeek's</strong>
+              </h1>
+  
+              <div class="meta-wrapper">
+  
+                <div class="badge-wrapper">
+                  <div class="badge badge-fill">LesGeek's</div>
+  
+                </div>
+  
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section id="introduction">
+            <h6>Introduction</h6>
+            <h7><strong>DiceMaster</strong> est un bot Discord conçu pour plusieurs type d'utilisation et l'ouverture de nouvelle commande en béta avant la création d'un bot dédier ou l'envoie de la commande sur le bot dédier. Il offre une gamme de fonctionnalités pour améliorer votre expérience sur Discord. Ce bot fait partit des projet créer avec le studio LesGeek's</h7>
+        </section>
+
+        
+
+        <section id="commandes">
+            <h6>Commandes</h6>
+
+            <h3>Commandes de JDR</h3>
+
+            <h4><code>/add-death</code></h4>
+            <h7>Ajoute une mort à l'utilisateur spécifié. [ Commande Admin ]</h7>
+            <pre><code>/add-death [@utilisateur]</code></pre>
+
+            <h4><code>/adminlevel</code></h4>
+            <h7>Voir l'Xp et le niveau d'un joueur. [ Commande Admin ]</h7>
+            <pre><code>/adminlevel [@utilisateur]</code></pre>
+            
+
+            <h3>Commandes de Banks</h3>
+
+            <h4><code>/add-money </code></h4>
+            <h7>Ajoute de l'argent à la banque d'un joueur. [ Commande Admin ]</h7>
+            <pre><code>/add-modey [@utilisateur] [montant de l'argent]  </code></pre>
+
+              <!--<h4><code>!mute &lt;utilisateur&gt; [durée]</code></h4>
+            <p>Réduit un utilisateur au silence pour une durée spécifiée.</p>
+            <pre><code>!mute @utilisateur 10m</code></pre>
+            <p><strong>Exemple :</strong></p>
+            <pre><code>Utilisateur : !mute @Paul 10m
+Bot : @Paul a été mis en sourdine pour 10 minutes.</code></pre>-->
+
+            <h3>Commandes de Paris</h3>
+
+            <h4><code>/creat_paris </code></h4>
+            <h7>Créer un paris avec 2 choix.</h7>
+            <pre><code>/creat_paris [Choix 1] [Choix 2]  </code></pre>
+
+            <h4><code>/add_money_paris </code></h4>
+            <h7>Ajouter de l'argent à un joueur. [ Commande Admin ]</h7>
+            <pre><code>/add_money_paris [@utilisateur] [montant de l'argent]</code></pre>
+
+            <h4><code>/bank_balance </code></h4>
+            <h7>Voir la banque pour parier du joueur.</h7>
+            <pre><code>/bank_balance</code></pre>
+
+            <h4><code>/declare_winner </code></h4>
+            <h7>Déclarer qui est le gagnant d'un paris. [ Commande Admin ]</h7>
+            <pre><code>/declare_winner [paris_id] [choix du gagnant]</code></pre>
+
+            <h4><code>/add_money_paris </code></h4>
+            <h7>Ajouter de l'argent à un joueur. [ Commande Admin ]</h7>
+            <pre><code>/add_money_paris [@utilisateur] [montant de l'argent]</code></pre>
+           
+
+        </section>
+
+    <!--  <section id="faq">
+            <h2>FAQ</h2>
+            <p><strong>Q : Comment puis-je inviter le bot sur mon serveur ?</strong><br>
+            R : Utilisez <a href="#">ce lien d'invitation</a> et suivez les instructions.</p>
+
+            <p><strong>Q : Que faire si une commande ne fonctionne pas ?</strong><br>
+            R : Assurez-vous que le bot dispose des permissions nécessaires et que vous avez utilisé la commande correctement. Si le problème persiste, contactez le support.</p>
+        </section>
+
+        <section id="support">
+            <h2>Support</h2>
+            <p>Pour toute assistance supplémentaire, veuillez rejoindre notre <a href="#">serveur de support</a> ou nous contacter à <a href="mailto:support@nomdubot.com">support@nomdubot.com</a>.</p>
+        </section>-->
+    </div>
+    <a href="#top" class="go-top" data-go-top>
+      <ion-icon name="chevron-up"></ion-icon>
+    </a>
+    <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

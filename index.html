@@ -74,7 +74,7 @@
 
     .close:hover,
     .close:focus {
-      color: black;
+      color: white;
       text-decoration: none;
       cursor: pointer;
     }
@@ -151,7 +151,7 @@
           </select>
         </div>
 
-        <button class="btn btn-primary" onclick="window.location.href='login.html'">
+        <button class="btn btn-primary" onclick="window.location.href=''">
           <span id="loginButtonLabel">Se connecter</span>
       </button>
       
@@ -181,23 +181,23 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="./index.html" class="navbar-link">Accueil</a>
+            <a href="#accueil" class="navbar-link">Accueil</a>
           </li>
 
           <li>
-            <a href="Movie.html" class="navbar-link">Projets</a>
+            <a href="#projets-section" class="navbar-link">Projets</a>
           </li>
 
           <li>
-            <a href="Serie.html" class="navbar-link">Animations</a>
+            <a href="#animation" class="navbar-link">Animations</a>
           </li>
 
           <li>
-            <a href="Anime.html" class="navbar-link">Les JDR</a>
+            <a href="#jdr" class="navbar-link">Les JDR</a>
           </li>
 
           <li>
-            <a href="tv.html" class="navbar-link">Infos</a>
+            <a href="#info" class="navbar-link">Infos</a>
           </li>
 
         </ul>
@@ -226,7 +226,7 @@
         - #HERO
       -->
 
-      <section class="hero">
+      <section id="accueil" class="hero">
         <div class="container">
 
           <div class="hero-content">
@@ -257,7 +257,7 @@
         <div class="container">
 
           <div class="flex-wrapper">
-
+            <section id="projets-section" class="upcoming">
             <div class="title-wrapper">
               <p class="section-subtitle">Bienvenue sur le site officiel LesGeek's</p>
 
@@ -271,18 +271,37 @@
             <li>
               <div class="movie-card">
 
-                <a href="./viewnivers.html">
+                <a href="https://www.viewnivers.com/">
                   <figure class="card-banner">
                     <img src="./assets/images/viewnivers.png" alt="The Northman movie poster" style="width:300px;height:500px";>
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="./viewnivers.html">
+                  <a href="https://www.viewnivers.com/">
                     <h3 class="card-title">Viewnivers</h3>
                   </a>
 
-                  <time datetime="2022">2024</time>
+                  <time datetime="2024">2024</time>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="movie-card">
+
+                <a href="./dicemaster.html">
+                  <figure class="card-banner">
+                    <img src="./assets/images/DiceMaster.png" alt="The Northman movie poster" style="width:300px;height:500px";>
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="./dicemaster.html">
+                    <h3 class="card-title">DiceMaster</h3>
+                  </a>
+
+                  <time datetime="2023">2023</time>
                 </div>
               </div>
             </li>
@@ -295,16 +314,16 @@
         - #TOP RATED
       -->
 
-      <section class="top-rated">
+      <section id="animation" class="top-rated">
         <div class="container">
-
+        
           <h2 class="h2 section-title">Calendrier d'Animations</h2>
 
           <div id="event-widget">
             
-            <p id="event-name">JDR The Medicine For Quest</p>
-            <p id="event-date">Date de l'événement: 09 juin 2024</p>
-            <p id="event-location">Lieu de l'événement: Serveur JDR</p>
+            <p id="event-name">Soirée films : Mickey il étais une fois noël</p>
+            <p id="event-date">Date de l'événement: 29 Novembre 2024</p>
+            <p id="event-location">Lieu de l'événement: Serveur LesGeek's</p>
             <div id="countdown">
               <h3>Compte à rebours vers l'événement</h3>
               <p id="countdown-timer"></p>
@@ -335,24 +354,14 @@
 
           <ul class="movies-list  has-scrollbar">
 
-            <li>
-              <div class="movie-card">
-
-                <a href="./the medicine for quest.html">
-                  <figure class="card-banner">
-                    <img src="./assets/images/The medicine for quest v2.png" alt="The Northman movie poster" style="width:300px;height:500px";>
-                  </figure>
-                </a>
-
-                <div class="title-wrapper">
-                  <a href="./the medicine for quest.html">
-                    <h3 class="card-title">The Medicine For Quest</h3>
-                  </a>
-
-                  
-                </div>
-              </div>
-            </li>
+            <div>
+            <img src="./assets/images/semaine 1 25-28.png" alt="The Northman movie poster" style="width:1200px;height:300px";/>
+          </div>
+        </ul>
+        <ul class="movies-list  has-scrollbar">
+          <div>
+            <img src="./assets/images/Semaine 1 29 - 01.png" alt="The Northman movie poster" style="width:1200px;height:300px";/>
+          </div>
 
           </ul>
         </div>
@@ -363,7 +372,7 @@
         - #UPCOMING
       -->
 
-      <section class="upcoming">
+      <section id="jdr" class="upcoming">
         <div class="container">
 
           <div class="flex-wrapper">
@@ -377,6 +386,26 @@
           </div>
 
           <ul class="movies-list  has-scrollbar">
+
+            <li>
+              <div class="movie-card">
+
+                <a href="#">
+                  <figure class="card-banner">
+                    <img src="./assets/images/logo.webp" alt="The Northman movie poster" style="width:300px;height:500px";>
+                  </figure>
+                </a>
+
+                <div class="title-wrapper">
+                  <a href="#">
+                    <h3 class="card-title">The Medicine For Quest :</h3>
+                    <h3 class="card-title">Echeos Of The Future</h3>
+                  </a>
+
+                  <time datetime="2025">2025</time>
+                </div>
+              </div>
+            </li>
 
             <li>
               <div class="movie-card">
@@ -415,6 +444,9 @@
                 </div>
               </div>
             </li>
+
+           
+
           </ul>
         </div>
       </section>
@@ -524,14 +556,17 @@
     <h4>Voici les dernières mises à jour sur LesGeek's.com :</h4>
     <h0>'</h0>
     <h5>
-      Version 0.1 : Création du site.
+      Version 1.0.1 : Ouverture du site au publique.
     </h5>
     <h0>'</h0>
     <!-- Discord LesGeek's -->
-    <h4>Voici les dernières mises à jour sur le serveur LesGeek's :</h4>
+    <h4>Voici les dernières mises à jour sur le serveur discord LesGeek's :</h4>
     <h0>'</h0>
     <h5>
-      Version 1.0 : Supression de la catégorie Planning.
+      Version Actuel : V1.4.0.
+    </h5>
+    <h5>
+      La mise à jour de noël arrive bientôt.
     </h5>
     
       <!-- Les mises à jour seront insérées ici via JavaScript -->
@@ -577,7 +612,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Mises à jour (ceci pourrait être chargé dynamiquement d'un backend)
   var updates = [
-    "Mise à jour 1: Description de la mise à jour 1.",
+    "V1.0.1: Ouverture du site",
     "Mise à jour 2: Description de la mise à jour 2.",
     "Mise à jour 3: Description de la mise à jour 3."
   ];
@@ -593,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // Date cible de l'événement
-    const eventDate = new Date("June 09, 2024 14:15:00").getTime();
+    const eventDate = new Date("November 29, 2024 21:15:00").getTime();
 
     // Mise à jour du compte à rebours toutes les secondes
     const countdownFunction = setInterval(function() {
