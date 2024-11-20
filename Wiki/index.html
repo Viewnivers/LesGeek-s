@@ -16,7 +16,8 @@
                 <li><a href="#univers">...</a></li>
                 <li><a href="#point d'energie">Gestion des points d'énergie</a></li>
                 <li><a href="#fatigue">Gestion de la fatigue</a></li>
-                <li><a href="#contact">...</a></li>
+                <li><a href="#fain">Gestion de la fain</a></li>
+                <li><a href="#combat">Mechanique de combat</a></li>
             </ul>
         </nav>
 
@@ -40,6 +41,10 @@
                 <h3>Perte de PE en combat :</h3>
                 <p>Déplacement = - 1 PE ( En marchant ) <br>Sprint = - 2 PE ( En courant ( x2 de distance possible où ce déplacé ) ) </p>
                 <p>Attaque de Corp à Corp = - 1 PE <br>Attque à distance = - 2 PE</p>
+                <h3>PE à 0 :</h3>
+                <p>Si les PE sont à 0, le joueur tombe dans les pommes.Il est donc vulnérable à tous. <br>Il perd 1 PV par tour.</p>
+                <p>Il peut ce faire porter mais le joueur qui le porte va perdre 3 PE par tour tant qu'il le porte.<br>De plus,il a une limite de distance pour marché du à l'agilité (comme d'habitude) et il ne peux pas sprint.</p>
+                <p>...</p>        <!-- comment récupérer des pe quand on est à 0 -->
             </section>
 
             <section id="fatigue">
@@ -58,9 +63,39 @@
                 <p>❗ Si les PE du joueur sont à la moitier, on ne régéner pas les PF.<br>Il faudra attendre que les PE soit à 3/4.</p>
             </section>
 
-            <section id="contact">
-                <h2>En cours ...</h2>
-                <p>...</p>
+            <section id="fain">
+                <h2>Gestion de la fain :</h2>
+                <p>La fain est sur 5.</p>
+                <p>Fain ➡ 
+                    <span class="red">Entre 0 et 2 : "- 1 PF de plus toute les 24 heures, - 10 en mentale et - 2 de PE toute les 24 heures "</span>
+                    |
+                    <span class="orange">Entre 2 et 3 : "-5 en mentale sur chaque jet de dé.</span>
+                    |
+                    <span class="green">Entre 3 et 5 : "Rien."</span>
+                </p>
+            </section>
+            <section id="combat">
+                <h2>Mechanique de combat :</h2>
+                <h3>Perte de PE en combat :</h3>
+                <p><a href="#point d'energie">"Voir la partie sur la gestion de point d'énergie."</a></p>
+                <h3>Coûts :</h3>
+                <p>Coûts de déplacement ➡ 2 déplacement par tour ( distance lié à l'agiliter )
+                    <br>Après une attaque, le joueur peut ce déplacer uniquement une fois ( même si il lui reste toujours 2 en déplacement )
+                    <br>Après une attaque magique, le joueur ne peut plus ce déplacer.
+                </p>
+                <p>Coûts d'attaque ➡ 1 attaque par tour ( hors attaque magique )</p>
+                <p>Coût d'attaque magique  ➡ 1 attaque magique tous les 2 tours </p>
+                <h3>Equipement :</h3>
+                <p>Pour équiper une arme, sa gaspille un tour d'attaque. Parcontre le joueur peut ce déplacer.</p>
+                <p>Pour équiper une armure, sa gaspille 1 d'attaque et on ne peut plus ce délacer ensuite.
+                    <br>De plus, pénaliter de - 15 pour esquiver une attaque à distance et - 35 pour une attaque de courte porter.
+                </p>
+                <p>En mangant pendant un combat on ne peux plus rien faire ensuite.
+                    <br>De plus, pénaliter de -5 en agiliter pour esquiver une attaque à distance et - 10 pour une attaque de courte porter.
+                </p>
+                <p>Impossible de dormire durant un combat ( sauf si c'est due à un effet d'attaque magique ou autre )</p>
+                <h3>Temps :</h3>
+                <p>Un joueur a 2 minutes pour jouer son tour, au dela, le tour est arréter.</p>
             </section>
         </main>
     </div>
