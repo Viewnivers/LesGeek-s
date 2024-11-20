@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki du JDR</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barre latérale -->
+        <nav class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#univers">...</a></li>
+                <li><a href="#point d'energie">Gestion des points d'énergie</a></li>
+                <li><a href="#fatigue">Gestion de la fatigue</a></li>
+                <li><a href="#contact">...</a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenu principal -->
+        <main class="content">
+            <section id="introduction">
+                <h1>Bienvenue sur le Wiki du JDR</h1>
+                <p>Explorez les différentes sections pour découvrir tout ce qu'il faut savoir sur l'univers, les règles, et plus encore.
+                </p>
+            </section>
+
+            <section id="univers">
+                <h2>En cours ...</h2>
+                <p>...</p>
+            </section>
+
+            <section id="point d'energie">
+                <h2>Gestion des points d'énergie :</h2>
+                <p>Pour rechager 3/4 des <span class="tooltip">PE<span class="tooltiptext">Point d'énergie</span></span> il faut 12 de sommeil de suite. <br> Si on a 6 heures de sommeil de suite il faut lancée un dé de 100 et faire entre 
+                0 et 30 pour recharger la moitier des PE aussi non c'est 1/4 des PE de recharger.</p>
+                <h3>Perte de PE en combat :</h3>
+                <p>Déplacement = - 1 PE ( En marchant ) <br>Sprint = - 2 PE ( En courant ( x2 de distance possible où ce déplacé ) ) </p>
+                <p>Attaque de Corp à Corp = - 1 PE <br>Attque à distance = - 2 PE</p>
+            </section>
+
+            <section id="fatigue">
+                <h2>Gestion de la fatique :</h2>
+                <p>La fatigue sera sur 8.<br>1 point de fatigue sera enlevé toute les 12 heures. </p>
+                <p>
+                    <span class="tooltip">PF ➡ <span class="tooltiptext">PF = Point de fatigue</span></span> 
+                    <span class="red">Entre 0 et 1 : "- 4 de PE toute les 12 heures, 1 PV toute les 12 heures."</span>
+                    |
+                    <span class="orange">Entre 1 et 3 : "- 2 de PE toute les 12 heures."</span>
+                    |
+                    <span class="yellow">Entre 3 et 5 : "- 1 de PE toute les 12 heures."</span>
+                    |
+                    <span class="green">Entre 5 et 8 : "Rien."</span>
+                </p>
+                <p>❗ Si les PE du joueur sont à la moitier, on ne régéner pas les PF.<br>Il faudra attendre que les PE soit à 3/4.</p>
+            </section>
+
+            <section id="contact">
+                <h2>En cours ...</h2>
+                <p>...</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
